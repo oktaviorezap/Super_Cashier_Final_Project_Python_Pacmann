@@ -176,9 +176,16 @@ Penjelasan fungsi dan atribut adalah sebagai berikut:
         else: #ketika input ingin input belanja tidak terisi yes atau no
             print('Input Salah! Silakan Ulangi Kembali! 🙏')
             self.add_item()            
-    
-    
-    #Fitur Update Item Name-----------------------------------------------------------------------------------------------------
+   ```
+3. Method update_item_name()
+   <br>Method update_item_name() digunakan untuk melakukan input pada nama item
+   <br>
+   <br>Cara kerjanya adalah sebagai berikut:
+   <br> a. Menginput nama item sebelumnya diinput dalam method add_item() dan disimpan pada atribut list_item
+   <br> b. Jika nama item yang diinput ada di dalam atribut list_item, maka akan dilakukan update nama item berdasarkan input nama item baru
+   <br> c. Setelah itu diberikan perintah apakah ingin melakukan update item kembali, menghapus item, melakukan reset transaksi, melakukan pengecekan transaksi dan opsi untuk kembali melakukan input item belanja
+   ```python
+       #Fitur Update Item Name-----------------------------------------------------------------------------------------------------
     def update_item_name(self):
         print(' ')
         print(' ')
@@ -243,10 +250,5 @@ Penjelasan fungsi dan atribut adalah sebagai berikut:
             print('Penyebab : Nama Item sudah Diganti atau Tidak ada Dalam Input Item Belanja Anda 🥲')
             print('Silakan Ulangi! 🙏')
             self.update_item_name()
-   ```
-3. Method update_item_name()
-   <br>Method update_item_name() digunakan untuk melakukan input pada nama item
-   <br>Cara kerjanya adalah sebagai berikut:
-   <br> a. Menginput nama item sebelumnya diinput dalam method add_item() dan disimpan pada atribut list_item
- 
+   ``` 
       
