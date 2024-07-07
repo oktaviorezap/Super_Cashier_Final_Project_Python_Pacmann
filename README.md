@@ -667,3 +667,9 @@ Penjelasan fungsi dan atribut adalah sebagai berikut:
         table = tabulate(self.list_item, header, tablefmt='grid')
         print(table)
     ```
+# Test Case Session
+<br>Petunjuk Pengerjaan:
+<br> 1. Download module cashier.py
+<br> 2. lalu ketik ```from cashier import Transaction``` untuk mengakses module cashier dan class Transaction()
+<br> 3. lalu buat variabel untuk memangil class Transaction() , misal: ```transaksi_001 = Transaction()```
+<br> 4. Lalu gunakan variabel untuk mengakses method add_item() --> ```transaksi_001.add_item()```
