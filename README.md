@@ -674,7 +674,7 @@ Penjelasan fungsi dan atribut adalah sebagai berikut:
 <br> 3. lalu buat variabel untuk memangil class Transaction() , misal: ```transaksi_001 = Transaction()```
 <br> 4. Lalu gunakan variabel untuk mengakses method add_item() --> ```transaksi_001.add_item()```
 <br>
-<br> Demo Test Case bisa dilihat disini : [teks](https://youtu.be/9oeatVOFFBE?si=m6tn-0qdltHKPuJE)
+<br> Demo Test Case bisa dilihat disini : [Youtube: Oktavio Reza Putra - Final Project Python JPP MAX Pacmann AI](https://youtu.be/9oeatVOFFBE?si=m6tn-0qdltHKPuJE)
 
 # Conclusion
 1. Perlu adanya penambahan item seperti List Belanja dan jumlah Stok yang tersedia saat ini di Toko Supermarket Cak Andi
