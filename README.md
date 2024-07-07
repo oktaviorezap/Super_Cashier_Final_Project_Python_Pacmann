@@ -29,7 +29,7 @@ Penjelasan fungsi dan atribut adalah sebagai berikut:
 1. **Class Transaction()**
    <br>Berisi Method dan atribut yang digunakan untuk menjalankan Program Super Cashier
    <br>Class Transaction() memiliki atribut yang bernama list_item yang digunakan untuk menyimpan input item belanja yang dimasukkan oleh customer
-   ![Screenshot 2024-07-07 192214](https://github.com/oktaviorezap/Super_Cashier_Final_Project_Python_Pacmann/assets/98758499/98c410a2-fc20-4cf9-958f-fd8bde04a008)
+   <br>![Screenshot 2024-07-07 192214](https://github.com/oktaviorezap/Super_Cashier_Final_Project_Python_Pacmann/assets/98758499/98c410a2-fc20-4cf9-958f-fd8bde04a008)
 
 3. Method add_item()
    <br> Method add_item digunakan untuk menginput satu atau lebih item Belanja yang meliputi nama item, jumlah item dan harga per satuan item
