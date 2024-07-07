@@ -23,4 +23,4 @@
 # Snippet Code
 Berisi penjelasan atribut dan fungsi yang digunakan dalam sistem fungsi super cashier ini
 1. Final Project ini menggunakan module yang dinamakan cashier.py
-2. <cashier.py> berisi class yang bernama Transaction() 
+2. cashier.py berisi class yang bernama Transaction() 
