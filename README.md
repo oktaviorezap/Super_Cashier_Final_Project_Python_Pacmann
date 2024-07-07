@@ -19,3 +19,8 @@
 
 # Super Cashier Project Flowchart
 <img width="1075" alt="final project-super cashier-python-oktavio reza putra" src="https://github.com/oktaviorezap/Super_Cashier_Final_Project_Python_Pacmann/assets/98758499/a74b8ca0-33f4-4052-a785-b33e721133e6">
+
+# Snippet Code
+Berisi penjelasan atribut dan fungsi yang digunakan dalam sistem fungsi super cashier ini
+1. Final Project ini menggunakan module yang dinamakan cashier.py
+2. <cashier.py> berisi class yang bernama Transaction() 
