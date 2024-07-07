@@ -35,4 +35,128 @@ Penjelasan fungsi dan atribut adalah sebagai berikut:
    <br>Setelah melakukan input item belanja, maka customer akan diarahkan untuk melakukan update item, menghapus item, melakukan reset transaksi, melakukan pengecekan transaksi dan opsi untuk kembali melakukan input item belanja 
    <br>![Screenshot 2024-07-07 193327](https://github.com/oktaviorezap/Super_Cashier_Final_Project_Python_Pacmann/assets/98758499/719c51cf-8ad2-4752-ab29-1d50806d0ebf)
    <br>
-   <br>![Screenshot 2024-07-07 193441](https://github.com/oktaviorezap/Super_Cashier_Final_Project_Python_Pacmann/assets/98758499/baf6f810-0dd3-4f68-b597-24def9ac2faa)
+   ```python
+           #ingin menginput item belanja untuk pertama kalinya?
+        input_item = str(input('Input Item Belanja? (Yes/No) : '))
+        print(' ')
+        if input_item.lower() == 'yes': #jika ingin menginput item belanja untuk pertama kalinya
+            while True:
+                try:
+                    nama_item = input('Item Name : ')
+                    if nama_item.lower()=='selesai':
+                        #jika input item sudah selesai maka nama_item harus diinput "selesai"
+                        print('Terima kasih....Input Item Belanja Anda Sudah Selesai!')
+                        print(' ')
+                        
+                        #ingin melakukan update?
+                        update_confirmation = str(input('Apakah Anda ingin mengganti Nama Item, Jumlah Item, atau Harga per Item yang sudah dimasukkan? (Yes / No) : '))
+                        if update_confirmation.lower() == 'yes':
+                            update_type = str(input('Bagian Mana yang ingin Anda Update? (Pilih Salah Satu : Item Name, Jumlah Item, Harga per Item) : '))
+                            if update_type.title() == 'Item Name':
+                                self.update_item_name()
+                                break
+                            elif update_type.title() == 'Jumlah Item':
+                                self.update_item_qty()
+                                break
+                            elif update_type.title() == 'Harga Per Item':
+                                self.update_item_price()
+                                break
+                        elif update_confirmation.lower() == 'no':
+                            #ingin melakukan penghapusan item belanja yang sudah diinput?
+                            deletion_order_confirmation = str(input('Apakah anda Ingin Menghapus Salah Satu Item Belanja Anda? (Yes/No) : '))
+                            if deletion_order_confirmation.lower() == 'yes':
+                                self.delete_item()
+                                break
+                            elif deletion_order_confirmation.lower() == 'no':
+                                #ingin melakukan cek order
+                                check_order_confirmation = str(input('Apakah anda Ingin Melakukan Pengecekan Item Belanja Anda? (Yes/No) : '))
+                                if check_order_confirmation.lower() == 'yes':
+                                    self.check_order()
+                                    break
+                                elif check_order_confirmation.lower() == 'no':
+                                    #ingin melakukan reset order?
+                                    reset_order_confirmation = str(input('Apakah anda Ingin Reset Input Item Belanja Anda? (Yes/No) : '))
+                                    if reset_order_confirmation.lower() == 'yes':
+                                        self.reset_transaction()
+                                        break
+                                    elif reset_order_confirmation.lower() == 'no':
+                                        #ingin menginput lagi item belanja?
+                                        input_again_confirmation = str(input('Apakah anda Ingin Melakukan Input Kembali Item Belanja Anda? (Yes/No) : '))
+                                        if input_again_confirmation.lower() == 'yes':
+                                            self.add_item()
+                                            break
+                                        elif input_again_confirmation.lower() == 'no':
+                                            #jika tidak ingin melakukan input item lagi
+                                            #dan tidak ingin menggunakan fasilitas lainnya
+                                            #maka langsung diarahkan ke method total_price() untuk mendapatkan harga keseluruhan
+                                            #beserta diskonnya (jika masuk kriteria diskon)
+                                            print(' ')
+                                            self.total_price()
+                                            print(' ')
+                                            print('Note : Jika ada yang ingin diinput kembali silakan buat ID Transaksi Baru 🙏🥰')
+                                            break      
+                
+                    jumlah_item = int(input('Jumlah Item : '))
+                    harga_per_satuan_item = int(input('Harga per Item Quantity : '))
+                    total_harga_per_item = int(harga_per_satuan_item * jumlah_item)
+                    print(' ')
+                    self.list_item.append([nama_item.upper(), jumlah_item, harga_per_satuan_item, total_harga_per_item])
+                
+                    if len(self.list_item) == 20:
+                        #batas nya hanya smapai 20 list item
+                        #jika sudah melebihi batas input
+                        #akan keluar notifikasi sebagai berikut:
+                        print(' ')
+                        print(f'Kapasitas Input Item Belanja sudah Mencapai Batas Maksimum : ({len(self.list_item)} Jenis Item)')
+                        
+                        #namun masih bisa mengisi input item belanja lagi
+                        input_item_again = str(input('Apakah Anda masih ingin melakukan Input Item Belanja Kembali? (Yes/No) : '))
+                        if input_item_again.lower() == 'yes':
+                            print(' ')
+                            self.add_item()
+                        elif input_item_again.lower() == 'no':
+                            break
+
+                except ValueError:
+                    #jika terjadi kesalahan input jumlah item atau harga per satuan item
+                    #misalnya kosong atau diisi dengan tipe data lain
+                    #maka akan diarahkan kembali untuk mengisi item belanja di method add_item()
+                    print('Input Jumlah Item, Harga per Satuan Item tidak boleh kosong')
+                    print('atau diinput dengan nilai selain angka!')
+                    print('Silakan Ulangi Kembali Input Item Belanja Anda! 🙏')
+                    self.add_item()
+                    
+        elif input_item.lower()=='no': #jika tidak ingin menginput item belanja untuk pertama kalinya
+            if self.list_item != []: #jika list sebelumnya sudah terisi?
+                #ingin menghapus item belanja?
+                deletion_order_confirmation = str(input('Apakah anda Ingin Menghapus Salah Satu Item Belanja Anda? (Yes/No) : '))
+                if deletion_order_confirmation.lower() == 'yes':
+                    self.delete_item()
+                    pass
+                elif deletion_order_confirmation.lower() == 'no':
+                    #ingin cek order?
+                    check_order_confirmation = str(input('Apakah anda Ingin Melakukan Pengecekan Item Belanja Anda? (Yes/No) : '))
+                    if check_order_confirmation.lower() == 'yes':
+                        self.check_order()
+                        pass
+                    elif check_order_confirmation.lower() == 'no':
+                        #ingin reset order?
+                        reset_order_confirmation = str(input('Apakah anda Ingin Reset Input Item Belanja Anda? (Yes/No) : '))
+                        if reset_order_confirmation.lower() == 'yes':
+                            self.reset_transaction()
+                            pass
+                        elif reset_order_confirmation.lower() == 'no':
+                            print(' ')
+                            print(' ')
+                            self.total_price()
+                            pass
+                        
+            elif self.list_item == []: #jika list sebelumnya kosong? atau tidak jadi mengisi untuk pertama kalinya
+                self.table_belanja()
+                pass
+        
+        else: #ketika input ingin input belanja tidak terisi yes atau no
+            print('Input Salah! Silakan Ulangi Kembali! 🙏')
+            self.add_item()
+   ```
+   
