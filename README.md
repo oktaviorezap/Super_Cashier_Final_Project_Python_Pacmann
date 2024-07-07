@@ -654,3 +654,16 @@ Penjelasan fungsi dan atribut adalah sebagai berikut:
         self.list_item.append(total_transaksi_final)
         self.table_belanja()
    ```
+10. Method table_belanja()
+    <br> a. Method table_belanja() digunakan untuk menampilkan tabel input item belanja atau nota transaksi setelah dijalankan di method total_price()
+    <br> b. Method ini menyimpan tables (item yang disimpan pada atribut list_item) dan headers (yang menyimpan nama kolom)
+    <br>
+    ```python
+    #Fitur Menampilkan Tabel List Item Belanja-----------------------------------------------------------------------------------------------------                
+    def table_belanja(self):
+        print(' ')
+        print('Berikut adalah List Transaksi yang dibeli :')
+        header = ['Item', 'Jumlah Item', 'Harga per Item (Rp)','Total Harga Keseluruhan (Rp)']
+        table = tabulate(self.list_item, header, tablefmt='grid')
+        print(table)
+    ```
