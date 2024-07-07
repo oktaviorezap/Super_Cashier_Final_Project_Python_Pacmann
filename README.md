@@ -244,9 +244,9 @@ Penjelasan fungsi dan atribut adalah sebagai berikut:
             print('Silakan Ulangi! 🙏')
             self.update_item_name()
    ```
-   3. Method update_item_name()
-      <br>Method update_item_name() digunakan untuk melakukan input pada nama item
-      <br>Cara kerjanya adalah sebagai berikut:
-      <br> a. Menginput nama item sebelumnya diinput dalam method add_item() dan disimpan pada atribut list_item
-   5. 
+3. Method update_item_name()
+   <br>Method update_item_name() digunakan untuk melakukan input pada nama item
+   <br>Cara kerjanya adalah sebagai berikut:
+   <br> a. Menginput nama item sebelumnya diinput dalam method add_item() dan disimpan pada atribut list_item
+ 
       
