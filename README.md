@@ -33,9 +33,26 @@ Penjelasan fungsi dan atribut adalah sebagai berikut:
 2. Method add_item()
    <br> Method add_item digunakan untuk menginput satu atau lebih item Belanja yang meliputi nama item, jumlah item dan harga per satuan item
    <br>Setelah melakukan input item belanja, maka customer akan diarahkan untuk melakukan update item, menghapus item, melakukan reset transaksi, melakukan pengecekan transaksi dan opsi untuk kembali melakukan input item belanja 
-   <br>![Screenshot 2024-07-07 193327](https://github.com/oktaviorezap/Super_Cashier_Final_Project_Python_Pacmann/assets/98758499/719c51cf-8ad2-4752-ab29-1d50806d0ebf)
+   <br>
    <br>
    ```python
+    #Fitur Add Item Belanja------------------------------------------------------------------------------------------------------------------------------
+    def add_item(self):
+        """
+        fitur (method) add_item() digunakan sebagai method untuk
+        memasukkan item belanja customer
+        
+        1. batas input belanja hanya sampai 20 list item
+        2. setelah selesai melakukan input item belanja, maka nama_item diisi "selesai"
+        3. setelah itu customer diberikan fasilitas pilihan untuk melakukan :
+            a. Sistem untuk Update nama Item dengan method update_item_name()
+            b. Sistem untuk Update Quantity (qty) dengan method update_item_qty()
+            c. Sistem untuk Update Price dengan method update_item_price()
+            d. Sistem untuk Menghapus Item dengan method delete_item()
+            e. Sistem untuk melakukan Reset pada Order dengan method reset_transaction()
+            f. Melakukan check pada Order dengan method check_order()
+            g. Sistem untuk menghitung total price dan diskon dengan method total_price() yang diarahkan secara otomatis
+        """
         #ingin menginput item belanja untuk pertama kalinya?
         input_item = str(input('Input Item Belanja? (Yes/No) : '))
         print(' ')
@@ -157,6 +174,73 @@ Penjelasan fungsi dan atribut adalah sebagai berikut:
         
         else: #ketika input ingin input belanja tidak terisi yes atau no
             print('Input Salah! Silakan Ulangi Kembali! 🙏')
-            self.add_item()
+            self.add_item()            
+    
+    
+    #Fitur Update Item Name-----------------------------------------------------------------------------------------------------
+    def update_item_name(self):
+        print(' ')
+        print(' ')
+        print('🛍️ Fitur Update Item Name 🛍️')
+        print('---------------------------------------------')
+        self.table_belanja() 
+        print(' ')
+        old_item = str(input('Nama Item Lama yang mau diganti : '))
+        found = False
+        for i in range(len(self.list_item)):
+            if old_item.upper() == self.list_item[i][0]:
+                found = True
+                new_item = str(input('Input Item Baru : '))
+                self.list_item[i][0] = new_item.upper()
+                print(' ')
+                    
+                update_item_again = str(input('Apakah ingin Melakukan Update Item Belanja Lagi? (Yes/No) : '))
+                if update_item_again.lower() == 'yes':
+                    print(' ')
+                    update_type = str(input('Bagian Mana yang ingin Anda Update? (Pilih Salah Satu : Item Name, Jumlah Item, Harga per Item) : '))
+                    if update_type.title() == 'Item Name':
+                        self.update_item_name()
+                        break
+                    elif update_type.title() == 'Jumlah Item':
+                        self.update_item_qty()
+                        break
+                    elif update_type.title() == 'Harga Per Item':
+                        self.update_item_price()
+                        break  
+                        
+                elif update_item_again.lower() == 'no':
+                    deletion_order_confirmation = str(input('Apakah anda Ingin Menghapus Salah Satu Item Belanja Anda? (Yes/No) : '))
+                    if deletion_order_confirmation.lower() == 'yes':
+                        self.delete_item()
+                        break
+                    elif deletion_order_confirmation.lower() == 'no':
+                        check_order_confirmation = str(input('Apakah anda Ingin Melakukan Pengecekan Item Belanja Anda? (Yes/No) : '))
+                        if check_order_confirmation.lower() == 'yes':
+                            self.check_order()
+                            break
+                        elif check_order_confirmation.lower() == 'no':
+                            reset_order_confirmation = str(input('Apakah anda Ingin Reset Input Item Belanja Anda? (Yes/No) : '))
+                            if reset_order_confirmation.lower() == 'yes':
+                                self.reset_transaction()
+                                break
+                            elif reset_order_confirmation.lower() == 'no':
+                                input_again_confirmation = str(input('Apakah anda Ingin Melakukan Input Kembali Item Belanja Anda? (Yes/No) : '))
+                                if input_again_confirmation.lower() == 'yes':
+                                    self.add_item()
+                                    break
+                                elif input_again_confirmation.lower() == 'no':
+                                    print(' ')
+                                    print(' ')
+                                    self.total_price()
+                                    print(' ')
+                                    print('Note : Jika ada yang ingin diinput kembali silakan buat ID Transaksi Baru 🙏🥰')
+                                    break                
+
+        if found == False:
+            print('⚠️Warning : ')
+            print('Input Nama Item Salah! 🙅')
+            print('Penyebab : Nama Item sudah Diganti atau Tidak ada Dalam Input Item Belanja Anda 🥲')
+            print('Silakan Ulangi! 🙏')
+            self.update_item_name()
    ```
    
