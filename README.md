@@ -1,1 +1,1 @@
-# pacmann_python_final_project_super_cashier
+# Python Final Project : Super Cashier - Pacmann AI
