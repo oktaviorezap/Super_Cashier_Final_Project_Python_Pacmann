@@ -13,5 +13,9 @@
 5. Sistem untuk Menghapus Item dengan **method delete_item()**
 6. Sistem untuk melakukan Reset pada Order dengan **method reset_transaction()**
 7. Melakukan check pada Order dengan **method check_order()**
+
 8. Sistem untuk menghitung total price dan diskon dengan **method total_price()**
 9. Fitur Tambahan : Sistem untuk menapilkan Tabel Item Belanja seperti Nota Sederhana dengan **method table_belanja()**
+
+# Super Cashier Project Flowchart
+<img width="1075" alt="final project-super cashier-python-oktavio reza putra" src="https://github.com/oktaviorezap/Super_Cashier_Final_Project_Python_Pacmann/assets/98758499/a74b8ca0-33f4-4052-a785-b33e721133e6">
