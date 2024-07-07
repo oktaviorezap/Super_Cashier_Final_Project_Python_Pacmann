@@ -34,3 +34,5 @@ Penjelasan fungsi dan atribut adalah sebagai berikut:
    <br> Method add_item digunakan untuk menginput satu atau lebih item Belanja yang meliputi nama item, jumlah item dan harga per satuan item
    <br>Setelah melakukan input item belanja, maka customer akan diarahkan untuk melakukan update item, menghapus item, melakukan reset transaksi, melakukan pengecekan transaksi dan opsi untuk kembali melakukan input item belanja 
    <br>![Screenshot 2024-07-07 193327](https://github.com/oktaviorezap/Super_Cashier_Final_Project_Python_Pacmann/assets/98758499/719c51cf-8ad2-4752-ab29-1d50806d0ebf)
+   <br>
+   <br>![Screenshot 2024-07-07 193327](https://github.com/oktaviorezap/Super_Cashier_Final_Project_Python_Pacmann/assets/98758499/c44bbfb8-bf58-478e-9be3-8165573bf158)
