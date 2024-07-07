@@ -196,22 +196,30 @@ Penjelasan fungsi dan atribut adalah sebagai berikut:
         print(' ')
         print('🛍️ Fitur Update Item Name 🛍️')
         print('---------------------------------------------')
+        
+        #menampilkan tabel belanja yang sudah dinput
         self.table_belanja() 
+        
         print(' ')
+        #memasukkan nama item sebelumnya
         old_item = str(input('Nama Item Lama yang mau diganti : '))
         found = False
         for i in range(len(self.list_item)):
+            #cek apakah ada di dalam nilai atribut list_item
             if old_item.upper() == self.list_item[i][0]:
-                found = True
-                new_item = str(input('Input Item Baru : '))
-                self.list_item[i][0] = new_item.upper()
+                found = True #Jika Ada
+                new_item = str(input('Input Item Baru : ')) #masukkan nama item baru yang ingin disimpan
+                self.list_item[i][0] = new_item.upper() #menyimpan nama item yang baru, menggantikan nama item lama
                 print(' ')
-                    
+                
+                #diberikan beberapa opsi
+                
+                #apakah ingin update item lagi
                 update_item_again = str(input('Apakah ingin Melakukan Update Item Belanja Lagi? (Yes/No) : '))
-                if update_item_again.lower() == 'yes':
+                if update_item_again.lower() == 'yes': #jika iya
                     print(' ')
                     update_type = str(input('Bagian Mana yang ingin Anda Update? (Pilih Salah Satu : Item Name, Jumlah Item, Harga per Item) : '))
-                    if update_type.title() == 'Item Name':
+                    if update_type.title() == 'Item Name': 
                         self.update_item_name()
                         break
                     elif update_type.title() == 'Jumlah Item':
@@ -221,22 +229,26 @@ Penjelasan fungsi dan atribut adalah sebagai berikut:
                         self.update_item_price()
                         break  
                         
-                elif update_item_again.lower() == 'no':
+                elif update_item_again.lower() == 'no': #jika tidak
+                    #dibeirkan opsi untuk menghapus item belanja
                     deletion_order_confirmation = str(input('Apakah anda Ingin Menghapus Salah Satu Item Belanja Anda? (Yes/No) : '))
                     if deletion_order_confirmation.lower() == 'yes':
                         self.delete_item()
                         break
                     elif deletion_order_confirmation.lower() == 'no':
+                        #diberikan opsi untuk cek order transaksi
                         check_order_confirmation = str(input('Apakah anda Ingin Melakukan Pengecekan Item Belanja Anda? (Yes/No) : '))
                         if check_order_confirmation.lower() == 'yes':
                             self.check_order()
                             break
                         elif check_order_confirmation.lower() == 'no':
+                            #diberikan opsi untuk reset transaksi
                             reset_order_confirmation = str(input('Apakah anda Ingin Reset Input Item Belanja Anda? (Yes/No) : '))
                             if reset_order_confirmation.lower() == 'yes':
                                 self.reset_transaction()
                                 break
                             elif reset_order_confirmation.lower() == 'no':
+                                #diberikan opsi untuk reset transaksi
                                 input_again_confirmation = str(input('Apakah anda Ingin Melakukan Input Kembali Item Belanja Anda? (Yes/No) : '))
                                 if input_again_confirmation.lower() == 'yes':
                                     self.add_item()
@@ -249,7 +261,7 @@ Penjelasan fungsi dan atribut adalah sebagai berikut:
                                     print('Note : Jika ada yang ingin diinput kembali silakan buat ID Transaksi Baru 🙏🥰')
                                     break                
 
-        if found == False:
+        if found == False: #jika nama yang diinput salah maka harus melakukan input ulang!
             print('⚠️Warning : ')
             print('Input Nama Item Salah! 🙅')
             print('Penyebab : Nama Item sudah Diganti atau Tidak ada Dalam Input Item Belanja Anda 🥲')
@@ -267,26 +279,30 @@ Penjelasan fungsi dan atribut adalah sebagai berikut:
    <br> e. Jika tidak ada opsi yang dipakai kembali pada poin C maka akan ditentukan total harga dalam transaksi melalui method total_price() dan terbentuk nota transaksi dalam bentuk tabel
    <br>
    ```python
-   #Fitur Update Item Quantity-----------------------------------------------------------------------------------------------------            
+    #Fitur Update Item Quantity-----------------------------------------------------------------------------------------------------            
     def update_item_qty(self):
         print(' ')
         print(' ')
         print('🔖1️⃣ Fitur Update Item Quantity 1️⃣🔖')
         print('---------------------------------------------')
+        #ditampilkan tabel input item belanja hasil input
         self.table_belanja()         
-        print(' ')        
+        print(' ')
+        #input nama item sebelumnya yang ingin diganti jumlah item nya
         input_item = str(input('Nama Item yang ingin diganti Jumlah (Qty) Itemnya : '))
         found = False
         for i in range(len(self.list_item)):
+            #apakah nama item yang dimasukkan di input_item ada di atribut list_item
             if input_item.upper() == self.list_item[i][0]:
                 found = True
                 new_qty = int(input('Input Jumlah (Qty) per Item Baru : '))
-                self.list_item[i][1] = new_qty 
-                self.list_item[i][3] = int(new_qty * self.list_item[i][2])                   
+                self.list_item[i][1] = new_qty #menyimpan jumlah item baru
+                self.list_item[i][3] = int(new_qty * self.list_item[i][2]) #dikalikan dengan harga per satuan item
                 print(' ')
-                    
+                
+                #ingin update input item?
                 update_item_again = str(input('Apakah ingin Melakukan Update Item Belanja Lagi? (Yes/No) : '))
-                if update_item_again.lower() == 'yes':
+                if update_item_again.lower() == 'yes': #jika iya
                     print(' ')
                     update_type = str(input('Bagian Mana yang ingin Anda Update? (Pilih Salah Satu : Item Name, Jumlah Item, Harga per Item) : '))
                     if update_type.title() == 'Item Name':
@@ -299,22 +315,26 @@ Penjelasan fungsi dan atribut adalah sebagai berikut:
                         self.update_item_price()
                         break  
                         
-                elif update_item_again.lower() == 'no':
+                elif update_item_again.lower() == 'no': #jika tidak
+                    #diberikan opsi menghapus input item belanja
                     deletion_order_confirmation = str(input('Apakah anda Ingin Menghapus Salah Satu Item Belanja Anda? (Yes/No) : '))
                     if deletion_order_confirmation.lower() == 'yes':
                         self.delete_item()
                         break
                     elif deletion_order_confirmation.lower() == 'no':
+                        #diberikan opsi untuk cek transaksi
                         check_order_confirmation = str(input('Apakah anda Ingin Melakukan Pengecekan Item Belanja Anda? (Yes/No) : '))
                         if check_order_confirmation.lower() == 'yes':
                             self.check_order()
                             break
                         elif check_order_confirmation.lower() == 'no':
+                            #diberikan opsi untuk reset transaksi
                             reset_order_confirmation = str(input('Apakah anda Ingin Reset Input Item Belanja Anda? (Yes/No) : '))
                             if reset_order_confirmation.lower() == 'yes':
                                 self.reset_transaction()
                                 break
                             elif reset_order_confirmation.lower() == 'no':
+                                #diberikan opsi untuk input item belanja lagi
                                 input_again_confirmation = str(input('Apakah anda Ingin Melakukan Input Kembali Item Belanja Anda? (Yes/No) : '))
                                 if input_again_confirmation.lower() == 'yes':
                                     self.add_item()
@@ -326,7 +346,7 @@ Penjelasan fungsi dan atribut adalah sebagai berikut:
                                     print(' ')
                                     print('Note : Jika ada yang ingin diinput kembali silakan buat ID Transaksi Baru 🙏🥰')
                                     break    
-        if found == False:
+        if found == False: #jika nama yang diinput salah maka harus melakukan input ulang!
             print('⚠️Warning : ')
             print('Input Nama Item Salah! 🙅')
             print('Penyebab : Nama Item sudah Diganti atau Tidak ada Dalam Input Item Belanja Anda 🥲')
@@ -344,26 +364,31 @@ Penjelasan fungsi dan atribut adalah sebagai berikut:
    <br> e. Jika tidak ada opsi yang dipakai kembali pada poin C maka akan ditentukan total harga dalam transaksi melalui method total_price() dan terbentuk nota transaksi dalam bentuk tabel
    <br>
    ```python
-   #Fitur Update Item Price-----------------------------------------------------------------------------------------------------            
+    #Fitur Update Item Price-----------------------------------------------------------------------------------------------------            
     def update_item_price(self):
         print(' ')
         print(' ')
         print('🏷️Fitur Update Item Price🏷️')
         print('---------------------------------------------')
+        #ditampilkan tabel belanja hasil input
         self.table_belanja()
         print(' ')
+        #input nama item yang ingin diganti harga per satua itemnya
         input_item = str(input('Nama Item yang ingin diganti Harga per Itemnya : '))           
         found = False
         for i in range(len(self.list_item)):
+            #apakah item yang diinput ada di atribut list_item?
             if input_item.upper() == self.list_item[i][0]:
                 found = True
+                #jika ada maka masukkan harga per satuan item yang baru
                 new_price = int(input('Input Harga per Item Baru : '))
-                self.list_item[i][2] = new_price
-                self.list_item[i][3] = int(new_price * self.list_item[i][1])                                     
+                self.list_item[i][2] = new_price #masukkan harga per satuan item yang baru
+                self.list_item[i][3] = int(new_price * self.list_item[i][1]) #dikalikan dengan jumlah item     
                 print(' ')
-                    
+                
+                #diberikan opsi untuk update item lagi
                 update_item_again = str(input('Apakah ingin Melakukan Update Item Belanja Lagi? (Yes/No) : '))
-                if update_item_again.lower() == 'yes':
+                if update_item_again.lower() == 'yes': #jika iya
                     print(' ')
                     update_type = str(input('Bagian Mana yang ingin Anda Update? (Pilih Salah Satu : Item Name, Jumlah Item, Harga per Item) : '))
                     if update_type.title() == 'Item Name':
@@ -376,22 +401,26 @@ Penjelasan fungsi dan atribut adalah sebagai berikut:
                         self.update_item_price()
                         break  
                         
-                elif update_item_again.lower() == 'no':
+                elif update_item_again.lower() == 'no': #jika tidak
+                    #diberikan opsi hapus item
                     deletion_order_confirmation = str(input('Apakah anda Ingin Menghapus Salah Satu Item Belanja Anda? (Yes/No) : '))
                     if deletion_order_confirmation.lower() == 'yes':
                         self.delete_item()
                         break
                     elif deletion_order_confirmation.lower() == 'no':
+                        #diberikan opsi cek transaksi
                         check_order_confirmation = str(input('Apakah anda Ingin Melakukan Pengecekan Item Belanja Anda? (Yes/No) : '))
                         if check_order_confirmation.lower() == 'yes':
                             self.check_order()
                             break
                         elif check_order_confirmation.lower() == 'no':
+                            #diberikan opsi reset transaksi
                             reset_order_confirmation = str(input('Apakah anda Ingin Reset Input Item Belanja Anda? (Yes/No) : '))
                             if reset_order_confirmation.lower() == 'yes':
                                 self.reset_transaction()
                                 break
                             elif reset_order_confirmation.lower() == 'no':
+                                #diberikan opsi input item belanja lagi
                                 input_again_confirmation = str(input('Apakah anda Ingin Melakukan Input Kembali Item Belanja Anda? (Yes/No) : '))
                                 if input_again_confirmation.lower() == 'yes':
                                     self.add_item()
@@ -403,7 +432,7 @@ Penjelasan fungsi dan atribut adalah sebagai berikut:
                                     print(' ')
                                     print('Note : Jika ada yang ingin diinput kembali silakan buat ID Transaksi Baru 🙏🥰')
                                     break     
-        if found == False:
+        if found == False: #jika nama yang diinput salah maka harus melakukan input ulang!
             print('⚠️Warning : ')
             print('Input Nama Item Salah! 🙅')
             print('Penyebab : Nama Item sudah Diganti atau Tidak ada Dalam Input Item Belanja Anda 🥲')
@@ -428,20 +457,25 @@ Penjelasan fungsi dan atribut adalah sebagai berikut:
         print('-----------------------------------------------------------------------------------------')
         print('Fitur Delete Item')
         print('-----------------------------------------------------------------------------------------')
+        #ditampilkan tabel belanja hasil input
         self.table_belanja()
         print(' ')
+        #input item yang ingin dihapus
         input_item = str(input('Input Nama Item yang ingin Dihapus : '))
         found = False
         for i in range(len(self.list_item)):
+            #mengecek apakah item yang dimasukkan ada di atribut list_item
             if input_item.upper() == self.list_item[i][0]:
                 found = True
+                #jika ada maka item yang dimasukkan akan dihapus beserta jumlah item, harga per satuan item 
+                #dan total harga itemnya
                 self.list_item.remove(self.list_item[i])
                 print(' ')
                 print('Terima kasih. Item yang Anda Input sudah Terhapus! 🙏')
                 print(' ')
-                    
+                #diberikan opsi update item lagi
                 update_item_again = str(input('Apakah ingin Melakukan Update Item Belanja Lagi? (Yes/No) : '))
-                if update_item_again.lower() == 'yes':
+                if update_item_again.lower() == 'yes': #jika iya
                     print(' ')
                     update_type = str(input('Bagian Mana yang ingin Anda Update? (Pilih Salah Satu : Item Name, Jumlah Item, Harga per Item) : '))
                     if update_type.title() == 'Item Name':
@@ -454,22 +488,26 @@ Penjelasan fungsi dan atribut adalah sebagai berikut:
                         self.update_item_price()
                         break  
                         
-                elif update_item_again.lower() == 'no':
+                elif update_item_again.lower() == 'no': #jika tidak
+                    #diberikan opsi hapus item
                     deletion_order_confirmation = str(input('Apakah anda Ingin Menghapus Salah Satu Item Belanja Anda? (Yes/No) : '))
                     if deletion_order_confirmation.lower() == 'yes':
                         self.delete_item()
                         break
                     elif deletion_order_confirmation.lower() == 'no':
+                        #diberikan opsi cek transaksi
                         check_order_confirmation = str(input('Apakah anda Ingin Melakukan Pengecekan Item Belanja Anda? (Yes/No) : '))
                         if check_order_confirmation.lower() == 'yes':
                             self.check_order()
                             break
                         elif check_order_confirmation.lower() == 'no':
+                            #diberikan opsi reset transaksi
                             reset_order_confirmation = str(input('Apakah anda Ingin Reset Input Item Belanja Anda? (Yes/No) : '))
                             if reset_order_confirmation.lower() == 'yes':
                                 self.reset_transaction()
                                 break
                             elif reset_order_confirmation.lower() == 'no':
+                                #diberikan opsi input item belanja lagi
                                 input_again_confirmation = str(input('Apakah anda Ingin Melakukan Input Kembali Item Belanja Anda? (Yes/No) : '))
                                 if input_again_confirmation.lower() == 'yes':
                                     self.add_item()
@@ -481,8 +519,8 @@ Penjelasan fungsi dan atribut adalah sebagai berikut:
                                     print(' ')
                                     print('Note : Jika ada yang ingin diinput kembali silakan buat ID Transaksi Baru 🙏🥰')
                                     break      
-            
-        if found == False:
+           
+        if found == False: #jika nama yang diinput salah maka harus melakukan input ulang!
             print('⚠️Warning : ')
             print('Input Nama Item Salah! 🙅')
             print('Penyebab : Nama Item sudah Diganti atau Tidak ada Dalam Input Item Belanja Anda 🥲')
@@ -499,15 +537,17 @@ Penjelasan fungsi dan atribut adalah sebagai berikut:
    <br> d. Jika NO, maka sistem akan mengarahkan ke method table_belanja() dan menghasilkan tabel nota kosong
    <br>
    ```python
-   #Fitur Reset Transaction-----------------------------------------------------------------------------------------------------    
+    #Fitur Reset Transaction-----------------------------------------------------------------------------------------------------    
     def reset_transaction(self):
         print(' ')
         print(' ')
         print('-----------------------------------------------------------------------------------------')
         print('Fitur Reset Transaction')
         print('-----------------------------------------------------------------------------------------')
+        #menghapus semua item pada atribut list_item
         self.list_item.clear()
-            
+        
+        #diberikan opsi untuk input kembali item belanja lagi
         confirmation_input = str(input('Ingin Melakukan Input kembali Item Belanja? (Yes / No) : '))
             
         if confirmation_input.lower() == 'yes':
@@ -516,7 +556,7 @@ Penjelasan fungsi dan atribut adalah sebagai berikut:
         elif confirmation_input.lower() == 'no':
             self.table_belanja()
             
-        else:
+        else: #selain yes dan no tidak valid, maka harus kembali ke confirmation input
             print("Input tidak valid. Harap masukkan Yes atau No. 🙏")
             self.reset_transaction()
    ```
@@ -539,12 +579,14 @@ Penjelasan fungsi dan atribut adalah sebagai berikut:
         print('Fitur Check Order')
         print('-----------------------------------------------------------------------------------------')
         for i in range(len(self.list_item)):
+            #ditampilkan tabel belanja hasil input
             self.table_belanja()
-            if self.list_item[i][0] != '':
+            if self.list_item[i][0] != '': #jika nama item tidak kosong
                 print('Silakan Cek apakah Data Anda Sudah Benar?')
                 print(' ')
+                #diberikan opsi update item lagi
                 update_item_again = str(input('Apakah ingin Melakukan Update Item Belanja Lagi? (Yes/No) : '))
-                if update_item_again.lower() == 'yes':
+                if update_item_again.lower() == 'yes': #jika iya
                     print(' ')
                     update_type = str(input('Bagian Mana yang ingin Anda Update? (Pilih Salah Satu : Item Name, Jumlah Item, Harga per Item) : '))
                     if update_type.title() == 'Item Name':
@@ -557,17 +599,20 @@ Penjelasan fungsi dan atribut adalah sebagai berikut:
                         self.update_item_price()
                         break  
                         
-                elif update_item_again.lower() == 'no':
+                elif update_item_again.lower() == 'no': #jika tidak
+                    #diberikan opsi hapus item
                     deletion_order_confirmation = str(input('Apakah anda Ingin Menghapus Salah Satu Item Belanja Anda? (Yes/No) : '))
                     if deletion_order_confirmation.lower() == 'yes':
                         self.delete_item()
                         break
                     elif deletion_order_confirmation.lower() == 'no':
+                        #diberikan opsi reset order
                         reset_order_confirmation = str(input('Apakah anda Ingin Reset Input Item Belanja Anda? (Yes/No) : '))
                         if reset_order_confirmation.lower() == 'yes':
                             self.reset_transaction()
                             break
                         elif reset_order_confirmation.lower() == 'no':
+                            #diberikan opsi input item lagi
                             input_again_confirmation = str(input('Apakah anda Ingin Melakukan Input Kembali Item Belanja Anda? (Yes/No) : '))
                             if input_again_confirmation.lower() == 'yes':
                                 self.add_item()
@@ -583,23 +628,26 @@ Penjelasan fungsi dan atribut adalah sebagai berikut:
                                 print('Note : Jika ada yang ingin diinput kembali silakan buat ID Transaksi Baru 🙏🥰')
                                 break   
             
-            elif self.list_item[i][0] == '':
+            elif self.list_item[i][0] == '': #jika nama item kosong
                 print(' ')
                 print('Yahh... Terdapat kesalahan input data nih! 🥲')
                 print(' ')
                 print('Silakan Bisa Menghapus Item Belanja, Reset Input Item Belanja atau Melakukan Input Kembali')
                 print('Opsi Melakukan Input Kembali bisa Anda lakukan jika ingin melakukan input Belanja kembali sebelum menghapus input yang nama item nya kosong 🙏')
                 print(' ')
+                #diberikan opsi menghapis item
                 deletion_order_confirmation = str(input('Apakah anda Ingin Menghapus Salah Satu atau Seluruh Item Belanja Anda? (Yes/No) : '))
                 if deletion_order_confirmation.lower() == 'yes':
                     self.delete_item()
                     break
                 elif deletion_order_confirmation.lower() == 'no':
+                    #diberikan opsi reset transaksi
                     reset_order_confirmation = str(input('Apakah anda Ingin Reset Input Item Belanja Anda? (Yes/No) : '))
                     if reset_order_confirmation.lower() == 'yes':
                         self.reset_transaction()
                         break
                     elif reset_order_confirmation.lower() == 'no':
+                        #diberikan opsi untuk input item belanja lagi sebelum menghapus nama item yang kosong
                         input_again_confirmation = str(input('Apakah anda Ingin Melakukan Input Kembali Item Belanja Anda? (Yes/No) : '))
                         if input_again_confirmation.lower() == 'yes':
                             self.add_item()
@@ -608,7 +656,7 @@ Penjelasan fungsi dan atribut adalah sebagai berikut:
                             print(' ')
                             print(' ')
                             self.total_price()
-                            break 
+                            break   
    ```
 9. Method total_price()
    <br> Method total_price() digunakan untuk menghitung total harga transaksi yang harus dibayarkan oleh Customer
@@ -622,37 +670,37 @@ Penjelasan fungsi dan atribut adalah sebagai berikut:
    ```python
     #Fitur Melihat Total Harga Keseluruhan
     def total_price(self):
-        total_transaksi = 0
-        total_transaksi_sebelum_diskon = []
-        total_diskon = []
-        total_transaksi_final = []
+        total_transaksi = 0 #menyimpan niali total transaksi
+        total_transaksi_sebelum_diskon = [] #menyimpan list transaksi sebelum diskon
+        total_diskon = [] #menyimpan list total_diskon
+        total_transaksi_final = [] #total transaksi final setelah dikurangi diskon
         for i in range(len(self.list_item)):
             total_transaksi += self.list_item[i][3]
 
-        if total_transaksi > 500000:
+        if total_transaksi > 500000: #jika transaksi di atas 500 ribu
             total_transaksi_sebelum_diskon = ['', 'Total Harga :','',total_transaksi]
             total_diskon = ['','Diskon:','10%',int((total_transaksi * 0.1) * (-1))]
             total_transaksi_final = ['', 'Total Harga Setelah Diskon:', '(Disc 10%)',int(total_transaksi - (total_transaksi * 0.1))]
 
-        elif total_transaksi > 300000:
+        elif total_transaksi > 300000: #jika transaksi di atas 300 ribu
             total_transaksi_sebelum_diskon = ['', 'Total Harga :','',total_transaksi] 
             total_diskon = ['','Diskon:','8%',int((total_transaksi * 0.08) * (-1))]
             total_transaksi_final = ['', 'Total Harga Setelah Diskon : ','(Disc 8%)',int(total_transaksi - (total_transaksi * 0.08))]
 
-        elif total_transaksi > 200000:
+        elif total_transaksi > 200000: #jika transaksi di atas 200 ribu
             total_transaksi_sebelum_diskon = ['', 'Total Harga :','',total_transaksi]
             total_diskon = ['','Diskon:','5%',int((total_transaksi * 0.05) * (-1))]
             total_transaksi_final = ['','Total Harga Setelah Diskon : ' , '(Disc 5%)',int(total_transaksi - (total_transaksi * 0.05))]
 
-        elif total_transaksi <= 200000:
+        elif total_transaksi <= 200000: #jika transaksi di bawah atau sama dengan 200 ribu
             total_transaksi_sebelum_diskon = ['', 'Total Harga :','',total_transaksi]
             total_diskon = ['','Diskon:','0%','']
             total_transaksi_final =['', 'Total Harga Setelah Diskon : ', '(No Disc)', int(total_transaksi)]
             
-        self.list_item.append(total_transaksi_sebelum_diskon) 
-        self.list_item.append(total_diskon)
-        self.list_item.append(total_transaksi_final)
-        self.table_belanja()
+        self.list_item.append(total_transaksi_sebelum_diskon) #menambahkan listl transaksi sebelum diskon
+        self.list_item.append(total_diskon) #menambah list  diskon
+        self.list_item.append(total_transaksi_final) #menambah list total transaksi final
+        self.table_belanja() #menampilkan nota transaksi dalam bentuk tabel
    ```
 10. Method table_belanja()
     <br> a. Method table_belanja() digunakan untuk menampilkan tabel input item belanja atau nota transaksi setelah dijalankan di method total_price()
@@ -663,8 +711,13 @@ Penjelasan fungsi dan atribut adalah sebagai berikut:
     def table_belanja(self):
         print(' ')
         print('Berikut adalah List Transaksi yang dibeli :')
+        #membuat variabel header untuk menyimpan niali yang digunakan sebagai nama kolom
         header = ['Item', 'Jumlah Item', 'Harga per Item (Rp)','Total Harga Keseluruhan (Rp)']
+        
+        #membuat variabel tabel untuk menyimpan nilai di dalam atribut list_item
         table = tabulate(self.list_item, header, tablefmt='grid')
+        
+        #menampilkan tabel input belanja atau nota transaksi
         print(table)
     ```
 # Test Case Session
