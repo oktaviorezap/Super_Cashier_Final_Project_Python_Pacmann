@@ -1,4 +1,6 @@
 # Python Final Project : Super Cashier - Pacmann AI
+
+# Final Project Background
 **Background Project :**
 
 **Business Problem :** Andi ingin membuat sistem kasir self-service untuk supermarket miliknya. Sehingga, Andi membutuhkan programmer yang bisa membuat fitur-fitur yang dibutuhkan supaya sistem kasir self-service di supermarket nya berjalan dengan lancar. 
