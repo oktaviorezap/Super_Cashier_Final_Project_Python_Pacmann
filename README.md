@@ -36,7 +36,7 @@ Penjelasan fungsi dan atribut adalah sebagai berikut:
    <br>![Screenshot 2024-07-07 193327](https://github.com/oktaviorezap/Super_Cashier_Final_Project_Python_Pacmann/assets/98758499/719c51cf-8ad2-4752-ab29-1d50806d0ebf)
    <br>
    ```python
-           #ingin menginput item belanja untuk pertama kalinya?
+        #ingin menginput item belanja untuk pertama kalinya?
         input_item = str(input('Input Item Belanja? (Yes/No) : '))
         print(' ')
         if input_item.lower() == 'yes': #jika ingin menginput item belanja untuk pertama kalinya
