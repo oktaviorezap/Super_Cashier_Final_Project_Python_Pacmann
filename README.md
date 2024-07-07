@@ -24,3 +24,7 @@
 Berisi penjelasan atribut dan fungsi yang digunakan dalam sistem fungsi super cashier ini
 1. Final Project ini menggunakan module yang dinamakan cashier.py
 2. cashier.py berisi class yang bernama Transaction() 
+
+Penjelasan fungsi dan atribut adalah sebagai berikut:
+![Screenshot 2024-07-07 192214](https://github.com/oktaviorezap/Super_Cashier_Final_Project_Python_Pacmann/assets/98758499/98c410a2-fc20-4cf9-958f-fd8bde04a008)
+
