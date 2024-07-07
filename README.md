@@ -26,9 +26,11 @@ Berisi penjelasan atribut dan fungsi yang digunakan dalam sistem fungsi super ca
 2. cashier.py berisi class yang bernama Transaction() 
 
 Penjelasan fungsi dan atribut adalah sebagai berikut:
-1. **Class Transaction()**<br>Berisi Method dan atribut yang digunakan untuk menjalankan Program Super Cashier
+1. **Class Transaction()**
+   <br>Berisi Method dan atribut yang digunakan untuk menjalankan Program Super Cashier
    ![Screenshot 2024-07-07 192214](https://github.com/oktaviorezap/Super_Cashier_Final_Project_Python_Pacmann/assets/98758499/98c410a2-fc20-4cf9-958f-fd8bde04a008)
 
 2. Method add_item()
-     
-
+   <br> Method add_item digunakan untuk menginput satu atau lebih item Belanja yang meliputi nama item, jumlah item dan harga per satuan item
+   <br>Setelah melakukan input item belanja, maka customer akan diarahkan untuk melakukan update item, menghapus item, melakukan reset transaksi, melakukan pengecekan transaksi dan opsi untuk kembali melakukan input item belanja 
+   <br>![Screenshot 2024-07-07 193327](https://github.com/oktaviorezap/Super_Cashier_Final_Project_Python_Pacmann/assets/98758499/719c51cf-8ad2-4752-ab29-1d50806d0ebf)
