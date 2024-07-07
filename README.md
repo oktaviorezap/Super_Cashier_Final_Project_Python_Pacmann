@@ -27,7 +27,7 @@ Berisi penjelasan atribut dan fungsi yang digunakan dalam sistem fungsi super ca
 
 Penjelasan fungsi dan atribut adalah sebagai berikut:
 1. Class Transaction()
-   \nBerisi Method dan atribut yang digunakan untuk menjalankan Program Super Cashier
+   Berisi Method dan atribut yang digunakan untuk menjalankan Program Super Cashier
    ![Screenshot 2024-07-07 192214](https://github.com/oktaviorezap/Super_Cashier_Final_Project_Python_Pacmann/assets/98758499/98c410a2-fc20-4cf9-958f-fd8bde04a008)
 
 2. Method add_item()
