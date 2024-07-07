@@ -673,3 +673,10 @@ Penjelasan fungsi dan atribut adalah sebagai berikut:
 <br> 2. lalu ketik ```from cashier import Transaction``` untuk mengakses module cashier dan class Transaction()
 <br> 3. lalu buat variabel untuk memangil class Transaction() , misal: ```transaksi_001 = Transaction()```
 <br> 4. Lalu gunakan variabel untuk mengakses method add_item() --> ```transaksi_001.add_item()```
+<br>
+<br> Demo Test Case bisa dilihat disini : (Link Youtube)
+
+# Conclusion
+1. Perlu adanya penambahan item seperti List Belanja dan jumlah Stok yang tersedia saat ini di Toko Supermarket Cak Andi
+2. Perlu adanya Input yang digunakan untuk memasukkan ID Transaksi yang Berbeda
+3. Perlu adanya input yang bisa digunakan untuk memasukkan lebih dari satu item sekaligus
