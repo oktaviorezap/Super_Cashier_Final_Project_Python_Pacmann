@@ -180,7 +180,7 @@ Penjelasan fungsi dan atribut adalah sebagai berikut:
             self.add_item()            
    ```
 3. Method update_item_name()
-   <br>Method update_item_name() digunakan untuk melakukan input pada nama item
+   <br>Method ini berfungsi mengganti (update) nama item yang sudah diinput dalam List Belanja menjadi nama item baru yang diinput
    <br>
    <br>Cara kerjanya adalah sebagai berikut:
    <br> a. Menginput nama item sebelumnya diinput dalam method add_item() yang disimpan pada atribut list_item 
@@ -269,7 +269,7 @@ Penjelasan fungsi dan atribut adalah sebagai berikut:
             self.update_item_name()
    ```
 4. Method update_item_qty()
-   <br>Method update_item_name() digunakan untuk melakukan update pada jumlah item
+   <br>Method ini berfungsi mengganti (update) jumlah item pada Item Belanja dengan menginput jumlah item yang baru dan nama Item yang ingin diganti jumlah item nya
    <br>
    <br>Cara kerjanya adalah sebagai berikut:
    <br> a. Menginput nama item sebelumnya diinput dalam method add_item() yang disimpan pada atribut list_item
@@ -354,7 +354,7 @@ Penjelasan fungsi dan atribut adalah sebagai berikut:
             self.update_item_qty()
    ```
 5. Method update_item_price()
-   <br>Method update_item_name() digunakan untuk melakukan update pada harga per satuan item
+   <br>Method ini berfungsi mengganti (update) harga per satuan item pada Item Belanja dengan menginput harga per satuan item yang baru dan nama Item yang ingin diganti harga per satuan item nya
    <br>
    <br>Cara kerjanya adalah sebagai berikut:
    <br> a. Menginput nama item sebelumnya diinput dalam method add_item() yang disimpan pada atribut list_item
@@ -528,7 +528,7 @@ Penjelasan fungsi dan atribut adalah sebagai berikut:
             self.delete_item() 
    ```
 7. Method reset_transaction()
-   <br>Method reset_transaction() digunakan untuk melakukan reset input item sehingga input item belanja menjadi kosong
+   <br>Method reset_transaction() digunakan untuk melakukan reset input item sehingga seluruh Item Belanja yang diinput akan dihapus 
    <br>
    <br>Cara kerjanya adalah sebagai berikut:
    <br> a. Menghapus seluruh input item belanja yang dimasukkan
