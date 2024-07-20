@@ -31,7 +31,7 @@ Penjelasan fungsi dan atribut adalah sebagai berikut:
    <br>Class Transaction() memiliki atribut yang bernama list_item yang digunakan untuk menyimpan input item belanja yang dimasukkan oleh customer
    <br>![Screenshot 2024-07-07 192214](https://github.com/oktaviorezap/Super_Cashier_Final_Project_Python_Pacmann/assets/98758499/98c410a2-fc20-4cf9-958f-fd8bde04a008)
 
-2. Method add_item()
+2. **Method add_item()**
    <br> a. Method add_item digunakan untuk menginput satu atau lebih item Belanja yang meliputi nama item, jumlah item dan harga per satuan item
    <br> b. Setelah semua input item belanja setiap item dimasukkan, maka secara otomatis langsung menghitung total_harga tiap item secara keseluruhan --> ```total_harga_per_item = int(harga_per_satuan_item * jumlah_item)```
    <br> c. Setelah melakukan input item belanja, maka customer akan diarahkan untuk melakukan update item, menghapus item, melakukan reset transaksi, melakukan pengecekan transaksi dan opsi untuk kembali melakukan input item belanja
@@ -288,7 +288,7 @@ Penjelasan fungsi dan atribut adalah sebagai berikut:
             print('Input Salah! Silakan Ulangi Kembali! 🙏')
             self.add_item()               
    ```
-3. Method update_item_name()
+3. **Method update_item_name()**
    <br>Method ini berfungsi mengganti (update) nama item yang sudah diinput dalam List Belanja menjadi nama item baru yang diinput
    <br>
    <br>Cara kerjanya adalah sebagai berikut:
@@ -419,7 +419,7 @@ Penjelasan fungsi dan atribut adalah sebagai berikut:
             print('Silakan Ulangi! 🙏')
             self.update_item_name()
    ```
-4. Method update_item_qty()
+4. **Method update_item_qty()**
    <br>Method ini berfungsi mengganti (update) jumlah item pada Item Belanja dengan menginput jumlah item yang baru dan nama Item yang ingin diganti jumlah item nya
    <br>
    <br>Cara kerjanya adalah sebagai berikut:
@@ -549,7 +549,7 @@ Penjelasan fungsi dan atribut adalah sebagai berikut:
             print('Silakan Ulangi! 🙏')
             self.update_item_qty()
    ```
-5. Method update_item_price()
+5. **Method update_item_price()**
    <br>Method ini berfungsi mengganti (update) harga per satuan item pada Item Belanja dengan menginput harga per satuan item yang baru dan nama Item yang ingin diganti harga per satuan item nya
    <br>
    <br>Cara kerjanya adalah sebagai berikut:
@@ -680,7 +680,7 @@ Penjelasan fungsi dan atribut adalah sebagai berikut:
             print('Silakan Ulangi! 🙏')
             self.update_item_price()   
    ```
-6. Method delete_item()
+6. **Method delete_item()**
    <br>Method delete_item() digunakan untuk menghapus item belanja
    <br>
    <br>Cara kerjanya adalah sebagai berikut:
@@ -813,7 +813,7 @@ Penjelasan fungsi dan atribut adalah sebagai berikut:
             print('Silakan Ulangi! 🙏')
             self.delete_item()  
    ```
-7. Method reset_transaction()
+7. **Method reset_transaction()**
    <br>Method reset_transaction() digunakan untuk melakukan reset input item sehingga seluruh Item Belanja yang diinput akan dihapus 
    <br>
    <br>Cara kerjanya adalah sebagai berikut:
@@ -846,7 +846,7 @@ Penjelasan fungsi dan atribut adalah sebagai berikut:
             print("Input tidak valid. Harap masukkan Yes atau No. 🙏")
             self.reset_transaction()
    ```
-8. Method check_order()
+8. **Method check_order()**
    <br>Method check_order() digunakan untuk melakukan pengecekan atas input item belanja yang sudah dimasukkan
    <br>
    <br>Cara kerjanya adalah sebagai berikut:
@@ -999,7 +999,7 @@ Penjelasan fungsi dan atribut adalah sebagai berikut:
                         print("Jawaban tidak valid. Silakan jawab 'Yes' atau 'No'.")
                         print(' ')
    ```
-9. Method total_price()
+9. **Method total_price()**
    <br> Method total_price() digunakan untuk menghitung total harga transaksi yang harus dibayarkan oleh Customer
    <br> Method ini muncul secara otomatis jika semua opsi sudah selesai digunakan atau tidak digunakan oleh customer
    <br> Cara kerjanya adalah sebagai berikut:
@@ -1043,7 +1043,7 @@ Penjelasan fungsi dan atribut adalah sebagai berikut:
         self.list_item.append(total_transaksi_final) #menambah list total transaksi final
         self.table_belanja() #menampilkan nota transaksi dalam bentuk tabel
    ```
-10. Method table_belanja()
+10. **Method table_belanja()**
     <br> a. Method table_belanja() digunakan untuk menampilkan tabel input item belanja atau nota transaksi setelah dijalankan di method total_price()
     <br> b. Method ini menyimpan tables (item yang disimpan pada atribut list_item) dan headers (yang menyimpan nama kolom)
     <br>
