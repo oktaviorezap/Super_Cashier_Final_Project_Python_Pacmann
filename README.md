@@ -20,6 +20,15 @@
 # Super Cashier Project Flowchart
 <img width="1075" alt="final project-super cashier-python-oktavio reza putra" src="https://github.com/oktaviorezap/Super_Cashier_Final_Project_Python_Pacmann/assets/98758499/a74b8ca0-33f4-4052-a785-b33e721133e6">
 
+# Test Case Session
+<br>Petunjuk Pengerjaan:
+<br> 1. Download module cashier.py
+<br> 2. lalu ketik ```from cashier import Transaction``` untuk mengakses module cashier dan class Transaction()
+<br> 3. lalu buat variabel untuk memangil class Transaction() , misal: ```transaksi_001 = Transaction()```
+<br> 4. Lalu gunakan variabel untuk mengakses method add_item() --> ```transaksi_001.add_item()```
+<br>
+<br> Demo Test Case bisa dilihat disini : [Youtube: Oktavio Reza Putra - Final Project Python JPP MAX Pacmann AI](https://youtu.be/9oeatVOFFBE?si=m6tn-0qdltHKPuJE)
+
 # Snippet Code
 Berisi penjelasan atribut dan fungsi yang digunakan dalam sistem fungsi super cashier ini
 1. Final Project ini menggunakan module yang dinamakan cashier.py
@@ -1062,15 +1071,6 @@ Penjelasan fungsi dan atribut adalah sebagai berikut:
         #menampilkan tabel input belanja atau nota transaksi
         print(table)
     ```
-# Test Case Session
-<br>Petunjuk Pengerjaan:
-<br> 1. Download module cashier.py
-<br> 2. lalu ketik ```from cashier import Transaction``` untuk mengakses module cashier dan class Transaction()
-<br> 3. lalu buat variabel untuk memangil class Transaction() , misal: ```transaksi_001 = Transaction()```
-<br> 4. Lalu gunakan variabel untuk mengakses method add_item() --> ```transaksi_001.add_item()```
-<br>
-<br> Demo Test Case bisa dilihat disini : [Youtube: Oktavio Reza Putra - Final Project Python JPP MAX Pacmann AI](https://youtu.be/9oeatVOFFBE?si=m6tn-0qdltHKPuJE)
-
 # Conclusion
 1. Perlu adanya penambahan item seperti List Belanja dan jumlah Stok yang tersedia saat ini di Toko Supermarket Cak Andi
 2. Perlu adanya Input yang digunakan untuk memasukkan ID Transaksi yang Berbeda
